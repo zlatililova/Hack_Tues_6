@@ -52,3 +52,8 @@
         padding-left: 0.1%;
         padding-right: 1%;
     }
+
+#map {
+  height: 50%;
+  width: 75%;
+}
