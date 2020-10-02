@@ -42,6 +42,24 @@ INSTALLED_APPS = [
     'map',
 ]
 
+MAP_WIDGETS = {
+    "GooglePointFieldWidget": (
+        ("zoom", 15),
+        ("mapCenterLocationName", "sofia"),
+        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'bulgaria'}}),
+        ("markerFitZoom", 12),
+    ),
+    "AIzaSyCndiwpn0s7MRo2qbhPbzhSxdODyPkFDBo": "<google-api-key>"
+}
+
+MAP_WIDGETS = {
+    "GooglePointFieldWidget": (
+        ("zoom", 15),
+        ("mapCenterLocation", [57.7177013, -16.6300491]),
+    ),
+    "": "<google-map-api-key>"
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
