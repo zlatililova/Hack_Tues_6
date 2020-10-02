@@ -4,7 +4,6 @@
 *{
     margin: 0;
     padding: 0;
-   
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -16,6 +15,7 @@ nav{
     border-right: none;
     border-left: none;
     position: sticky;
+    w)z-index: 2;
 }
 
 nav ul{
