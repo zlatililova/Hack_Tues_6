@@ -5,8 +5,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <link rel="stylesheet" type = "text/css" href="{% static 'board/hacktues.css' %}">
-        <link rel="stylesheet" href="HKT.css">
+        <!--<link rel="stylesheet" href="HKT.css">-->
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
 
@@ -16,16 +19,16 @@
         <ul>
             <img class="logo" src="{% static 'images/logo5.png'%}" alt="">
             <div class="items">
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Create</a></li>
             </div>
             {% if user.is_authenticated %}
-            <a class="asp" href="{% url 'login' %}"><button class="main-button">Log in</button></a>
-            <a class="asp" href="#"><button class="main-button">Register</button></a>
-            {% else %}
             <a class="asp" href="{% url 'logout' %}"><button class="main-button">Log out</button></a>
             <a class="asp" href="#"><button class="main-button">Profile</button></a>
+            {% else %}
+            <a class="asp" href="{% url 'login' %}"><button class="main-button">Log in</button></a>
+            <a class="asp" href="{% url 'register' %}"><button class="main-button">Register</button></a>
             {% endif %}
             
             
@@ -39,17 +42,45 @@
         </ul>
     </nav>
 
-   
+    <div>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+
+        
         <section class="square square-text">
                 <h4>Do in laughter securing smallest sensible no mr hastened. As perhaps proceed in in brandon of limited unknown greatly. Distrusts fulfilled happiness unwilling as explained of difficult. No landlord of peculiar ladyship attended if contempt ecstatic. Loud wish made on is am as hard. Court so avoid in plate hence. Of received mr breeding concerns peculiar securing landlord. Spot to many it four bred soon well to. Or am promotion in no departure abilities. Whatever landlord yourself at by pleasure of children be. </h4>
         </section>
         
-    </body>
-
-<div>
-    {% block content %}{% endblock %}
-</div>
-
-
+    </div>
+    
 </body>
+
+    <!--<footer>
+        <div class="footer">
+            <p>Need some help or want to report a problem? </br>
+              Contact us! </br>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-instagram"></a>
+    
+    
+            </p>
+            </div>
+           
+            <script>
+                      $(function(){
+            $(window).scroll(function(){
+              var winTop = $(window).scrollTop();
+              if(winTop >= 30){
+                $("body").addClass("sticky-header");
+              }else{
+                $("body").removeClass("sticky-header");
+              }//if-else
+            });//win func.
+          });//ready func.
+              </script>
+    </footer>-->
 </html>
+
+<!-- asdf -->
