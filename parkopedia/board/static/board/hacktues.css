@@ -1,0 +1,54 @@
+.topnav {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #59ba4e;
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a.hover {
+    background-color: #3452eb;
+    color: black;
+  }
+  
+  .topnav a.active {
+    float: left;
+
+    color: white;
+  }
+
+  .topnav a.right {
+      float: right;
+  } 
+
+  .topnav a.text{
+    
+    color: white; 
+    font-size: 25px;       
+      }
+
+.square {
+        position: absolute;
+        top: 97px;
+        right: 30px;
+        height: 447px;
+        width: 225px;
+        background-color: #828577;
+    }
+    
+    .square-text {
+        position: absolute;
+        text-align: center;
+        top: 5%;
+        left: 1%;
+        color: white;
+        padding-left: 0.1%;
+        padding-right: 1%;
+    }
