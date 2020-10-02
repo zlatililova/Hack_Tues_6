@@ -21,10 +21,10 @@
                 <li><a href="#">Create</a></li>
             </div>
             {% if user.is_authenticated %}
-            <a class="asp" href="{% url login %}"><button class="main-button">Log in</button></a>
+            <a class="asp" href="{% url 'login' %}"><button class="main-button">Log in</button></a>
             <a class="asp" href="#"><button class="main-button">Register</button></a>
             {% else %}
-            <a class="asp" href="{% url logout %}"><button class="main-button">Log out</button></a>
+            <a class="asp" href="{% url 'logout' %}"><button class="main-button">Log out</button></a>
             <a class="asp" href="#"><button class="main-button">Profile</button></a>
             {% endif %}
             
