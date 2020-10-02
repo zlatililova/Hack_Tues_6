@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'users',
 ]
 
-MAP_WIDGETS = {
+'''MAP_WIDGETS = {
     "GooglePointFieldWidget": (
         ("zoom", 15),
         ("mapCenterLocationName", "sofia"),
@@ -56,7 +56,7 @@ CUSTOM_MAP_SETTINGS = {
         ("zoom", 15),
         ("mapCenterLocation", [60.7177013, -22.6300491]),
     ),
-}
+}'''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
