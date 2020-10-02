@@ -1,11 +1,13 @@
+
 .topnav {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #59ba4e;
     overflow: hidden;
+    position: sticky;
+    top: 0;
   }
   
   .topnav a {
-    
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -20,7 +22,6 @@
   
   .topnav a.active {
     float: left;
-
     color: white;
   }
 
@@ -28,11 +29,7 @@
       float: right;
   } 
 
-  .topnav a.text{
-    
-    color: white; 
-    font-size: 25px;       
-      }
+  
 
 .square {
         position: absolute;
