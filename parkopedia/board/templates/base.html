@@ -2,61 +2,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type = "text/css" href="{% static 'board/hacktues.css' %}">
-    
+        <link rel="stylesheet" href="HKT.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
-
-
-<body bgcolor="#fff9e0">
     
-    <!DOCTYPE html>
+    <body bgcolor="#fff9e0">
+        <nav>
+            <ul>
+                <img class="logo" src="{% static 'images/logo5.png'%}" alt="">
+                <div class="items">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                </div>
+                <a class="asp" href=""><button class="main-button">Log in</button></a>
+                <a class="asp" href=""><button class="main-button">Log out</button></a>
+                <li class="search-icon">
+                    <input type="search" placeholder="Search">
+                    <label class="icon">
+                    <span class="fas fa-search"></span>
+                </li>
+            </ul>
+        </nav>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Drop menu</title>
-    <meta name="viewpoint" content="width=device-width, inital-scale=1">
-    <link rel="stylesheet" href="HKT.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <img class="logo" src="{% static 'images/logo5.png'%}" alt="">
-            <div class="items">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Friends</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Photos</a></li>
-            </div>
-            <a class="asp" href="#"><button class="main-button">Log in</button></a>
-            <li class="search-icon">
-                <input type="search" placeholder="Search">
-                <label class="icon">
-                <span class="fas fa-search"></span>
-            </label>
-            </li>
-        </ul>
-    </nav>
-
-    <div>
         <div class="square">
             <img src = "{% static 'images/parking2.jpg'%}" alt="Parking" style=width:100%> 
             <div class="square-text">
                 <h4>Do in laughter securing smallest sensible no mr hastened. As perhaps proceed in in brandon of limited unknown greatly. Distrusts fulfilled happiness unwilling as explained of difficult. No landlord of peculiar ladyship attended if contempt ecstatic. Loud wish made on is am as hard. Court so avoid in plate hence. Of received mr breeding concerns peculiar securing landlord. Spot to many it four bred soon well to. Or am promotion in no departure abilities. Whatever landlord yourself at by pleasure of children be. </h4>
             </div>
         </div>
+            
+        <div>{% block content %}{% endblock %}</div>
         
+    </body>
 
-<div>
-    {% block content %}{% endblock %}
-  </div>
-
-</div>
-</body>
-
-</body>
 </html>
