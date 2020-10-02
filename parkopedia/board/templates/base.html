@@ -10,13 +10,16 @@
 
 
 <body bgcolor="#fff9e0">
+    
     <div class="topnav">
+        
         <a class="active" href="{% url 'home' %}">Home</a>
         <a class="active" href="#{% url 'home' %}">Create</a>
-        <a class = "text"> Parkopedia</a>
+    
         <a class = "right" href="#profile">Profile</a>
         <a class = "right" href="#logInLogOut">Log in/Log out</a>
-
+    </div>
+    <div>
         <div class="square">
             <img src = "{% static 'images/parking2.jpg'%}" alt="Parking" style=width:100%> 
             <div class="square-text">
@@ -24,12 +27,12 @@
             </div>
         </div>
         
-</div>
+
 <div>
     {% block content %}{% endblock %}
   </div>
 
-
+</div>
 </body>
 
 </body>
