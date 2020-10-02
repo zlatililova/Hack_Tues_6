@@ -118,7 +118,7 @@ button:hover {
 
 .square {
         position: absolute;
-        top: 97px;
+        margin-top: 15px;
         right: 30px;
         height: 447px;
         width: 225px;
@@ -137,5 +137,7 @@ button:hover {
 
 #map {
   height: 500px;
+  margin-top: 15px;
   width: 75%;
+  margin-left: 5%;
 }
