@@ -14,9 +14,9 @@ class UserUpdateForm(forms.Form):
     email=forms.EmailField()
     bio = forms.CharField(max_length=1000, required=False)
     nickname = forms.CharField(max_length=250, required=False)
-    class Meta:
+    '''class Meta:
         model = User
-        fields = ['username', 'email', 'bio', 'nickname']
+        fields = ['username', 'email', 'bio', 'nickname']'''
 
 '''class ProfileUpdateForm(forms.ModelForm):
     class Meta:
