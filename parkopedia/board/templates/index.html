@@ -1,11 +1,31 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCndiwpn0s7MRo2qbhPbzhSxdODyPkFDBo&callback=initMap&libraries=places&v=weekly" async defer></script>
+    <link rel="stylesheet" type="text/css" href="static/board/hacktues.css" />
+    <script src="static/js/customMapStyles.js"></script>
+{% endblock head %}
+
 {% block content %}
-    <div id='map'></div>
+
+    <div id="map"></div>
     <script src="static/js/customMapStyles.js">
     </script> 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCndiwpn0s7MRo2qbhPbzhSxdODyPkFDBo&callback=initMap">
     </script>
-       
+
+  
+    <div class="pac-card" id="pac-card">
+        <div>
+            
+            <div id="pac-container">
+            
+            </div>
+
+            <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br />
+            <span id="place-address"></span>
+    </div> 
 {% endblock content %}
