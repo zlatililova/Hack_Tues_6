@@ -7,14 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type = "text/css" href="{% static 'board/hacktues.css' %}">
         <link rel="stylesheet" href="HKT.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
 
 
 <body bgcolor="#fff9e0">
     <nav>
         <ul>
-            <img class="logo" src="{% static 'images/logo5.png'%}" alt="">
+            <li class="logo">Parking<span style="color: #c1a163;">PRO</span>&nbsp<i class='fas fa-car'></i>
+            </li>
+            <li class="btn"><span class="fas fa-bars"></span></li>
             <div class="items">
                 <li><a href="">Home</a></li>
                 <li><a href="">About</a></li>
@@ -39,12 +43,12 @@
         </ul>
     </nav>
 
-   
-        <section class="square square-text">
-                <h4>Do in laughter securing smallest sensible no mr hastened. As perhaps proceed in in brandon of limited unknown greatly. Distrusts fulfilled happiness unwilling as explained of difficult. No landlord of peculiar ladyship attended if contempt ecstatic. Loud wish made on is am as hard. Court so avoid in plate hence. Of received mr breeding concerns peculiar securing landlord. Spot to many it four bred soon well to. Or am promotion in no departure abilities. Whatever landlord yourself at by pleasure of children be. </h4>
-        </section>
-        
-    </body>
+    <script>
+        $('nav ul li.btn span').click(function () {
+            $('nav ul div.items').toggleClass("show");
+            $('nav ul li.btn span').toggleClass("show");
+        });
+    </script>
 
 <div>
     {% block content %}{% endblock %}
