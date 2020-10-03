@@ -21,3 +21,8 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+class Up_date(models.Model):
+    email=models.EmailField()
+    bio = models.CharField(max_length=1000 )
+    nickname = models.CharField(max_length=250)
