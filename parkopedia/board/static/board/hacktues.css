@@ -16,7 +16,7 @@ nav{
     border: 1px solid #000;
     border-right: none;
     border-left: none;
-
+    z-index: 1;
 }
 
 nav ul{
@@ -140,6 +140,7 @@ button:hover {
   position: relative;
   margin: auto;
   margin-top: 10px;
+  z-index: -2;
 }
 
 
@@ -196,6 +197,7 @@ nav ul li.btn:hover span:before{
       background: #222222;
       display: inline-block;
       transition: top .4s;
+      opacity: 0.9;
     }
     nav ul div.items.show{
       top: 60px;
