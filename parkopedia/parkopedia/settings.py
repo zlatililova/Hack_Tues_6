@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'board',
     'users',
-    'crispy_forms',
 ]
 
 '''MAP_WIDGETS = {
