@@ -6,14 +6,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    color: #fefefe;
+    color: #F4F3EA;
 }
 
 nav{
     
-    background: #222222;
+    background: #333D51 ;
     padding: 10px 40px 10px 70px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     border-right: none;
     border-left: none;
     z-index: 2;
@@ -113,9 +113,9 @@ button:hover {
 }
 
 .content-section {
-  background: #BAB2B5;
+  background: #CBD0D8 ;
   padding: 10px 20px;
-  border: 1px solid #000000;
+  border: 1px solid #333D51  ;
   border-radius: 3px;
   margin: 50px;
 
