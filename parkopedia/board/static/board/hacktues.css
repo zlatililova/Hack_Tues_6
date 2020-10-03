@@ -6,17 +6,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: #fefefe;
 }
 
 nav{
+    
     background: #222222;
-    padding: 10px 40px 10px 50px;
+    padding: 10px 40px 10px 70px;
     border: 1px solid #000;
     border-right: none;
     border-left: none;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+
 }
 
 nav ul{
@@ -25,31 +25,35 @@ nav ul{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    color:#fff9e0;
+
 }
 
 nav ul li.logo{
     flex: 1;
     font-size: 30px;
     font-weight: 700;
+    color: #fefefe;
+    cursor: pointer;
 }
 
 nav ul div.items{
-    padding: 0 30px;
+    padding: 0 25px;
     display: inline-flex;
 }
 
 nav ul div.items a{
     text-decoration: none;
     font-size: 18px;
-    color: #fafafa;
     padding: 0 12px;
     transition: all 0.3s ease 0s;
+    color:white;
 }
 
 nav ul div.items a:hover{
     color: #e4cc94;
+    border-bottom:#e4cc94 3px solid ;
 }
+
 
 .search-icon{
     height: 40px;
@@ -87,14 +91,7 @@ nav ul div.items a:hover{
 .icon span{
     color: #222222;
     font-size: 18px;
-    text-align: center;
-}
 
-.logo {
-    height: 100px;
-    width: auto;
-    cursor: pointer;
-    margin-right:auto ;
 }
 
 .main-button {
@@ -115,63 +112,116 @@ button:hover {
 
 }
 
-  
-
-.square
-{
-    background-image: url("/static/images/parking2.jpg");
+.content-section {
+    background-image: url('parking2.jpg');
     background-repeat: no-repeat;
     padding: 5px 20px 15px 20px;
-    padding-bottom: 10px; 
-     
-}
-/*{
-        position: absolute;
-        top: 97px;
-        right: 30px;
-        height: 447px;
-        width: 225px;
-        background-color: #828577;
-    }*/
+    border: 4px solid #222222;
+    border-radius: 3px;
+    padding-bottom: 30px;
     
-    .square-text {
-            position: absolute;
-            top: 97px;
-            right: 30px;
-            max-width: 250px;
-            padding: 1em 1.5em;
-            margin-left: auto; 
-            margin-top: 0;
-            max-height: 1000px;
-            color: #f5eaea;
-            margin-top: 2em ;
-            margin-right: 2em;   
-    }    
-        /*position: absolute;
-        text-align: center;
-        top: 5%;
-        left: 1%;
-        color: white;
-        padding-left: 0.1%;
-        padding-right: 1%;
-    }*/
+    
+}
 
+.container {
+    max-width: 250px;
+    padding: 1em 1.5em;
+    margin-left: auto; 
+    margin-top: 0;
+    max-height: 1000px;
+    color: #f5eaea;
+    margin-top: 2em ;
+    margin-right: 2em;
+    
+}
+  
 #map {
   height: 500px;
   width: 75%;
-  position: fixed;
-  margin: 25px;
- 
 }
 
-.content-section {
-    background: #BAB2B5;
-    padding: 10px 20px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    margin: 25px;
-    margin-right: 350px;
+
+  nav ul li.btn span.show:before{
+    content: '\f00d';
   }
+
+  nav ul li.btn{
+      font-size: 30px;
+      flex: 1;
+      padding: 0 34px;
+      display: none;
+  }
+
+nav ul li.btn span{
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 3px solid #151515;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav ul li.btn:hover span:before{
+    content: '\f00d';
+}
+
+  @media screen and (max-width: 1052px) {
+    nav{
+      padding: 10px 40px 10px 0px;
+    }
+    nav ul li.logo{
+      display: none;
+    }
+    nav ul div.items{
+      flex: 4;
+    }
+  }
+  @media screen and (max-width: 800px){
+    nav ul li.btn{
+      display: block;
+    }
+    nav{
+      z-index: 1;
+      padding: 9px 40px 9px 0;
+    }
+    nav ul div.items{
+      z-index: -1;
+      position: fixed;
+      top: -220px;
+      right: 0;
+      width: 100%;
+      background: #222222;
+      display: inline-block;
+      transition: top .4s;
+    }
+    nav ul div.items.show{
+      top: 60px;
+    }
+    nav ul div.items li{
+      text-align: center;
+      line-height: 30px;
+      margin: 30px 0;
+    }
+    nav ul div.items li a{
+      font-size: 19px;
+    }
+  }
+  @media screen and (max-width: 405px) {
+    nav ul{
+      flex-wrap: nowrap;
+    }
+    nav ul li.search{
+      width: 50vmin;
+    }
+    nav ul li input{
+      width: 40vmin;
+    }
+    nav ul li .search-icon{
+      width: 10vmin;
+    }
+  }
+
 
   .footer {
     position: absolute;
