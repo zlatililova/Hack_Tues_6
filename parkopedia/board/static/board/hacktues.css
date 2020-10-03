@@ -138,6 +138,9 @@ button:hover {
 #map {
   height: 500px;
   width: 75%;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
 }
 
 
