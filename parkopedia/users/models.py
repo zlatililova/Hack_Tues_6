@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 from PIL import Image
 
 class Profile(models.Model):
-    user=models.OneToOneField(User, on_delete=models.CASCADE)
+    user=models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="media", default="images/default.jpg")
     bio = models.TextField()
     
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f'{self.user} Profile'
 
     def save(self):
         super().save()
@@ -21,3 +21,8 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+class Up_date(models.Model):
+    email=models.EmailField()
+    bio = models.CharField(max_length=1000 )
+    nickname = models.CharField(max_length=250)
