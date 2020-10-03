@@ -15,14 +15,17 @@ class Profile(models.Model):
     def save(self):
         super().save()
 
-        img = Image.open(self.image.path)
+        '''img = Image.open(self.image.path)
 
         if img.height >300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
-            img.save(self.image.path)
+            img.save(self.image.path)'''
 
-class Up_date(models.Model):
+class UserProfile(models.Model):
     email=models.EmailField()
     bio = models.CharField(max_length=1000 )
     nickname = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.user
