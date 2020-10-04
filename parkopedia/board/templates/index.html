@@ -9,25 +9,15 @@
 
 {% block content %}
 
-    <nav>
-        <script>
-            $('nav ul li.btn span').click(function () {
-                $('nav ul div.items').toggleClass("show");
-                $('nav ul li.btn span').toggleClass("show");
-            });
-        </script>
-    </nav>
-
-    <div class="wrapper">
-        <input id="pac-input" type="text" class="input" 
-        placeholder="Where are you going?">
-        <div class="searchbtn"><i class="fas fa-search"></i></div>
-    </div>
-
+    <li class="search-icon">
+        <input id="pac-input" type="text" placeholder="Enter a location" />
+        
+    </li>
     <div id="map"></div>
     <div id="infowindow-content">
-    <img src="" width="16" height="16" id="place-icon" />
+    <img src="static/images/icon-temp.png" width="16" height="16" id="place-icon" />
     <span id="place-name" class="title"></span><br />
     <span id="place-address"></span>
     </div>
 {% endblock content %}
+
