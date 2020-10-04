@@ -23,8 +23,8 @@
             <li class="btn"><span class="fas fa-bars"></span></li>
             <div class="items">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="{% url 'create' %">Create</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'create-page' %}">Create</a></li>
                 <li><a href="{% url 'profile' %}">Profile</button></a>
             </div>
             {% if user.is_authenticated %}
