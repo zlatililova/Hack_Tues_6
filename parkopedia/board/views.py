@@ -1,15 +1,16 @@
 from django.shortcuts import render
-from board.models import Post
+from django.views.generic import CreateView
+from .models import Location
+
 # Create your views here.
 
 def index(request):
     return render(request, 'index.html')
 
-def create(request):
-    if request.method == "POST":
-        obj = Post(address=request.POST.get("address"),
-                   rating=request.POST.get("rating"))
-        obj.save()
-        return render(request, "success.html")
-    return render(request, "create.html")
+
  
+class AddPlaceView(CreateView):
+    model = Location
+    template_name = "create.html"
+    success_url = "/index/"
+    fields = ("location",)
