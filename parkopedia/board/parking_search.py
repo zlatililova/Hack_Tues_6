@@ -1,22 +1,14 @@
 import googlemaps
 import pprint
 import time
-from math import asin, cos, radians, sin, sqrt
+import math
 
-#from GoogleMapsAPIKey import get_my_key
-#from Auto_search import ready()
-
-
-lat1 = -33.8670522 
-lng1 = 151.195362
-
-
-def locations(lat1, lng1):
+def locations(lat1, lng1, maxRadius = 1000):
     #API_KEY = get_my_key()
-    locations_dict = dict()
+    locations_dict = list()
     API_KEY = 'AIzaSyCndiwpn0s7MRo2qbhPbzhSxdODyPkFDBo'
     gmaps = googlemaps.Client(key = API_KEY)
-    places_result = gmaps.places_nearby(location = (lat1, lng1 ), radius = 200, open_now = False, type = 'parking')
+    places_result = gmaps.places_nearby(location = (lat1, lng1 ), radius = maxRadius, open_now = False, type = 'parking')
 
     for place in places_result['results']:
         name = None
@@ -29,31 +21,40 @@ def locations(lat1, lng1):
         name = place_details['result']['name']
         lat = place_details['result']['geometry']['location']['lat']
         lng = place_details['result']['geometry']['location']['lng']
-        locations_dict.update ({name: [lat, lng]})
+        locations_dict.append([name, lat, lng])
     return locations_dict
 
 
-def dist_between_two(*args):
-    lat1, lat2, long1, long2 = map(radians, args)
-
-    dist_lats = abs(lat2 - lat1) 
-    dist_longs = abs(long2 - long1) 
-    a = sin(dist_lats/2) + cos(lat1) * cos(lat2) * sin(dist_longs/2)
-    c = asin(sqrt(a)) * 2
-    radius_earth = 6378 
-    return c * radius_earth
-
+def dist_between_two(coord1, coord2):
+    R = 6372800  # Earth radius in meters
+    lat1, lng1 = coord1
+    lat2, lng2 = coord2
+    
+    phi1, phi2 = math.radians(lat1), math.radians(lat2) 
+    dphi       = math.radians(lat2 - lat1)
+    dlambda    = math.radians(lng2 - lng1)
+    
+    a = math.sin(dphi/2)**2 + \
+        math.cos(phi1)*math.cos(phi2)*math.sin(dlambda/2)**2
+    
+    return 2*R*math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 def nearest(lat1,lng1):
     places = locations(lat1,lng1)
 
-    best = list()
-    for lat2,lng2 in places.values():
-        best.append(abs(dist_between_two(lat1,lng1,lat2,lng2)))
+    minDist = 999999999999.0
+    minLat = 0
+    minLng = 0
+    minName = ""
+    found = False
 
-    num = best.index(max(best))
+    for name, lat2, lng2 in places:
+        dist = abs(dist_between_two((lat1,lng1),(lat2,lng2)))
+        if dist < minDist:
+            minDist = dist
+            minLat = lat2
+            minLng = lng2
+            minName = name
+            found = True
 
-    key_list = list(places)
-    name = key_list[num]
-
-    return(name)
+    return(found, minName, minLat, minLng)
