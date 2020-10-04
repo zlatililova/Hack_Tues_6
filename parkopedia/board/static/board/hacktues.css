@@ -2,55 +2,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-nav{
-    
-    background: #222222;
-    padding: 10px 40px 10px 70px;
-    border: 1px solid #000;
-    border-right: none;
-    border-left: none;
-    z-index: 2;
+nav{  
+  background: #222222;
+  padding: 10px 40px 10px 70px;
+  border: 1px solid #000;
+  border-right: none;
+  border-left: none;
+  z-index: 2;
 }
 
 nav ul{
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 nav ul li.logo{
-    flex: 1;
-    font-size: 30px;
-    font-weight: 700;
-    color: #fefefe;
-    cursor: pointer;
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fefefe;
+  cursor: pointer;
 }
 
 nav ul div.items{
-    padding: 0 25px;
-    display: inline-flex;
+  padding: 0 25px;
+  display: inline-flex;
 }
 
 nav ul div.items a{
-    text-decoration: none;
-    font-size: 18px;
-    padding: 0 12px;
-    transition: all 0.3s ease 0s;
-    color:white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 12px;
+  transition: all 0.3s ease 0s;
+  color:white;
 }
 
 nav ul div.items a:hover{
-    color: #e4cc94;
-    border-bottom:#e4cc94 3px solid ;
+  color: #e4cc94;
+  border-bottom:#e4cc94 3px solid;
 }
 
 
@@ -64,43 +62,36 @@ nav ul div.items a:hover{
   background: #f2f2f2;
   border-style: groove;
   border-color: #000;
-  border-radius: 1px;
-  font-size: 15px;
+  border-radius: 10px;
+  font-size: 23px;
   font-weight: 300;
   padding: 5 11px 0 0px;
   text-overflow: ellipsis;
-  height: 40px;
+  height: 50px;
 }
 
 .search-icon input{
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 0 10px;
-    color: #000;
-    font-size: 16px;
-    border-radius: 30px 0 0 15px;
+  height: 100%;
+  width: 100%;
 }
 
 
 
 .main-button {
-    padding: 7px 11px;
-    margin: 10px;
-    margin-right: 25px;
-    border: none;
-    border-radius: 50px;
-    background-color:#c1a163 ;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 19px;
+  padding: 7px 11px;
+  margin: 10px;
+  margin-right: 25px;
+  border: none;
+  border-radius: 50px;
+  background-color:#c1a163 ;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 19px;
 }
 
 button:hover {
-    background-color:#ad8c54 ;
-
+  background-color:#ad8c54;
 }
   
 #map {
@@ -109,7 +100,11 @@ button:hover {
   position: relative;
   margin: auto;
   margin-top: 10px;
-  z-index: -2;
+}
+
+#infowindow-content {
+  font-size: medium;
+  font-weight: 100;
 }
 
 #pac-input {
