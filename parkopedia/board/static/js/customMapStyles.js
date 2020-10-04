@@ -265,7 +265,11 @@ styles: [
     const marker = new google.maps.Marker({
         map,
         anchorPoint: new google.maps.Point(0, -29),
+        icon: 'static/images/car_marker.png'
     });
+
+
+
     autocomplete.addListener("place_changed", () => {
         infowindow.close();
         marker.setVisible(false);
@@ -306,9 +310,31 @@ styles: [
         infowindowContent.children["place-name"].textContent = place.name;
         infowindowContent.children["place-address"].textContent = address;
         infowindow.open(map, marker);
+        
+        const parkingLatLng = {lat:42.7142588, lng:23.2690619};
+        const parker = new google.maps.Marker({
+            position: parkingLatLng,
+            map
+        });
+
+        const directionsService = new google.maps.DirectionsService();
+        const directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.setMap(map);
+
+        let request = {
+            origin: place.geometry.location,
+            destination: parkingLatLng,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+
+        directionsService.route(request, function(response, status){
+            if(status = 'OK'){
+                directionsDisplay.setDirections(response);
+            }
+        });
 
     });
-
+/*
     var request = {
         location: map.center,
         radius: 3000,
@@ -317,9 +343,11 @@ styles: [
 
     var places_service = new google.maps.places.PlacesService(map);
 
-    places_service.nearbySearch(request, callback);    
+    places_service.nearbySearch(request, callback);    */
 }
 
+
+/*
 function callback(results, status) {
     if(status == google.maps.places.PlacesService.OK){
         for (var i = 0; i < results.length; i++){
@@ -341,5 +369,5 @@ function createMarker(place) {
     });
 
     return marker;
-}
+}*/
 
