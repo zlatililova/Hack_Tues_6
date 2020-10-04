@@ -10,15 +10,6 @@
 {% block content %}
 
     <nav>
-        <div style="position: absolute; left: 50%; margin-right: -50%; top: 7%; transform: translate(-50%, -50%)">
-        <li class="search-icon">
-            <input id="pac-input" type="text" placeholder="Enter a location" />
-            <label class="icon">
-            <span class="fas fa-search"></span>
-        </label>
-        </li>
-        </div>
-
         <script>
             $('nav ul li.btn span').click(function () {
                 $('nav ul div.items').toggleClass("show");
@@ -26,6 +17,12 @@
             });
         </script>
     </nav>
+
+    <div class="wrapper">
+        <input id="pac-input" type="text" class="input" 
+        placeholder="Where are you going?">
+        <div class="searchbtn"><i class="fas fa-search"></i></div>
+    </div>
 
     <div id="map"></div>
     <div id="infowindow-content">
