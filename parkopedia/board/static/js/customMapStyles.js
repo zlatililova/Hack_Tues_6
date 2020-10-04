@@ -267,62 +267,63 @@ styles: [
         anchorPoint: new google.maps.Point(0, -29),
     });
     autocomplete.addListener("place_changed", () => {
-    infowindow.close();
-    marker.setVisible(false);
-    const place = autocomplete.getPlace();
+        infowindow.close();
+        marker.setVisible(false);
+        const place = autocomplete.getPlace();
 
-    if (!place.geometry) {
-        // User entered the name of a Place that was not suggested and
-        // pressed the Enter key, or the Place Details request failed.
-        window.alert("No details available for input: '" + place.name + "'");
-        return;
-    }
+        if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
 
-    // If the place has a geometry, then present it on a map.
-    if (place.geometry.viewport) {
-        map.fitBounds(place.geometry.viewport);
-    } else {
-        map.setCenter(place.geometry.location);
-        map.setZoom(15); 
-    }
-    marker.setPosition(place.geometry.location);
-    marker.setVisible(true);
-    let address = "";
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(15); 
+        }
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+        let address = "";
 
-    if (place.address_components) {
-        address = [
-        (place.address_components[0] &&
-            place.address_components[0].short_name) ||
-            "",
-        (place.address_components[1] &&
-            place.address_components[1].short_name) ||
-            "",
-        (place.address_components[2] &&
-            place.address_components[2].short_name) ||
-            "",
-        ].join(" ");
-    }
-    infowindowContent.children["place-icon"].src = place.icon;
-    infowindowContent.children["place-name"].textContent = place.name;
-    infowindowContent.children["place-address"].textContent = address;
-    infowindow.open(map, marker);
+        if (place.address_components) {
+            address = [
+            (place.address_components[0] &&
+                place.address_components[0].short_name) ||
+                "",
+            (place.address_components[1] &&
+                place.address_components[1].short_name) ||
+                "",
+            (place.address_components[2] &&
+                place.address_components[2].short_name) ||
+                "",
+            ].join(" ");
+        }
+        infowindowContent.children["place-icon"].src = place.icon;
+        infowindowContent.children["place-name"].textContent = place.name;
+        infowindowContent.children["place-address"].textContent = address;
+        infowindow.open(map, marker);
+
     });
 
     var request = {
-        location: place.geometry.location,
-        radius: 300,
+        location: map.center,
+        radius: 3000,
         types: ['parking']
     };
 
     var places_service = new google.maps.places.PlacesService(map);
 
-    places_service.nearbySearch(request, callback);
+    places_service.nearbySearch(request, callback);    
 }
 
 function callback(results, status) {
     if(status == google.maps.places.PlacesService.OK){
         for (var i = 0; i < results.length; i++){
-            createMarker(results[i]);
+            marker.push(createMarker(results[i]));
         }
     }
 }
@@ -331,6 +332,14 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: placeLoc
     });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
+
+    return marker;
 }
+
