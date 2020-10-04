@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-img {
+
+    background-image: url("parking-lot.jpg");
+    min-height: 900px;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #fefefe;
+    z-index: 0;
+}
+
+
+      
+      .inner-width{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+        overflow: hidden;
+        margin-top: 50px;
+      }
+      .section-title{
+        text-align: center;
+        color: #ddd;
+        text-transform: uppercase;
+        font-size: 35px;
+      }
+      .border{
+        width: 110px;
+        height: 2px;
+        background: #c4a46c;
+        margin: 40px auto;
+        margin-top: 20px;
+      }
+      .about-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .about-title{
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+
+      }
+      .about-box{
+        max-width: 33.33%;
+        padding: 20px;
+        text-align: center;
+        color: #ddd;
+        cursor: pointer;
+        margin-top: 50px;
+      }
+       
+      .about-icon{
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        border: 3px solid #c4a46c;
+        color: #c4a46c;
+        transform: rotate(45deg);
+        margin-bottom: 30px;
+        margin-top: 16px;
+        transition: 0.3s linear;
+      }
+      .about-icon i{
+        line-height: 70px;
+        transform: rotate(-45deg);
+        font-size: 26px;
+      }
+      .about-box:hover .about-icon{
+        background: #c4a46c;
+        color: #ddd;
+      }
+
+      .about-desc{
+        font-size: 16px;
+      }
+      
+      @media screen and (max-width:960px) {
+        .about-box{
+          max-width: 45%;
+        }
+      }
+      
+      @media screen and (max-width:768px) {
+        .about-box{
+          max-width: 50%;
+        }
+      }
+      
+      @media screen and (max-width:480px) {
+        .about-box{
+          max-width: 100%;
+        }
+      }
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav{
+    
+    background: #222222;
+    padding: 10px 40px 10px 70px;
+    border: 1px solid #000;
+    border-right: none;
+    border-left: none;
+    z-index: 2;
+
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav ul li.logo{
+    flex: 1;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fefefe;
+    cursor: pointer;
+}
+
+nav ul div.items{
+    padding: 0 25px;
+    display: inline-flex;
+}
+
+nav ul div.items a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 8px;
+    margin: 5px;
+    transition: all 0.3s ease 0s;
+    color:white;
+}
+
+nav ul div.items a:hover{
+    color: #e4cc94;
+    border-bottom:#e4cc94 3px solid ;
+}
+
+.active a{
+  color: #e4cc94;
+  border-bottom:#e4cc94 3px solid 
+}
+
+
+.main-button {
+    padding: 7px 11px;
+    margin: 10px;
+    margin-right: 25px;
+    border: none;
+    border-radius: 50px;
+    background-color:#c1a163 ;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 19px;
+}
+
+button:hover {
+    background-color:#ad8c54 ;
+
+}
+
+  nav ul li.btn span.show:before{
+    content: '\f00d';
+  }
+
+  nav ul li.btn{
+      font-size: 30px;
+      flex: 1;
+      padding: 0 20px;
+      display: none;
+      color: #fefefefe;
+  }
+
+nav ul li.btn span{
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav ul li.btn:hover span:before{
+    content: '\f00d';
+}
+
+  @media screen and (max-width: 1052px) {
+    nav{
+      padding: 10px 40px 10px 0px;
+    }
+    nav ul li.logo{
+      display: none;
+    }
+    nav ul div.items{
+      flex: 4;
+    }
+  }
+  @media screen and (max-width: 800px){
+    nav ul li.btn{
+      display: block; 
+    }
+    nav{
+      z-index: 1;
+      padding: 9px 40px 9px 0;
+    }
+    nav ul div.items{
+      z-index: -1;
+      position: fixed;
+      top: -220px;
+      right: 0;
+      width: 100%;
+      background: #222222;
+      opacity: 0.9;
+      display: inline-block;
+      transition: top .4s;
+    }
+    nav ul div.items.show{
+      top: 60px;
+    }
+    nav ul div.items li{
+      text-align: center;
+      line-height: 30px;
+      margin: 30px 0;
+    }
+    nav ul div.items li a{
+      font-size: 19px;
+      
+    }
+  }
+  @media screen and (max-width: 405px) {
+    nav ul{
+      flex-wrap: nowrap;
+    }
+    nav ul li.search{
+      width: 50vmin;
+      
+    }
+    nav ul li input{
+      width: 40vmin;
+    }
+    nav ul li .search-icon{
+      width: 10vmin;
+    }
+  }
+
+  .account-heading {
+    font-size: 2.5rem;
+  }
+
