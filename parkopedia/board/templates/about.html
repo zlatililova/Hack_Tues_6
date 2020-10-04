@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% extends 'base.html' %}
+{% block content %}
 
-</html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="board/about.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-</head>
-
-<body>
-    <div class="bg-img">
-        <nav>
-            <ul>
-                <li class="logo">Parking<span style="color: #c1a163;">PRO</span>&nbsp<i class='fas fa-car'></i>
-                </li>
-                <li class="btn"><span class="fas fa-bars"></span></li>
-                <div class="items">
-                    <li><a href="base.html">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li class="active"><a href="aboutus.html">About us</a></li>
-                    <li><a href="#">Create</a></li>
-                </div>
-                <a class="asp" href="#"><button class="main-button">Log out</button></a>
-                <!--<a class="asp" href="#"><button class="main-button">Log out</button></a>-->
-
-            </ul>
-        </nav>
-
-        <script>
-            $('nav ul li.btn span').click(function () {
-                $('nav ul div.items').toggleClass("show");
-                $('nav ul li.btn span').toggleClass("show");
-            });
-        </script>
+    <div>
         <div class="about-section">
             <div class="inner-width">
                 <h1 class="section-title">About us</h1>
@@ -58,26 +24,22 @@
                         <div class="about-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="about-title">How it works?</div>
+                        <div class="about-title">Какво представлява?</div>
                         <div class="about-desc">
-                            Hello! This is a generator for text fonts of the "cool" variety. I noticed people were
-                            trying to find a generator like fancy letters, but were ending up on actual font sites
-                            rather than generators of copy-paste text like this one. So currently this is basically a
-                            duplicate of the above, but I think I'll try to collect a few more "cool" text fonts, like
-                            the old enlgish one, and specialise this a bit. </div>
+                           Това е сайт, чрез който намирате паркинг в радиус от 1 км от подадената ви локация. 
+                        За да видите възможностите за спиране около вас, вие трябва само да напишете адреса в търсачката. Дори тя ще го
+                    довърши вместо вас! След това системата автоматично ще покаже най-близкия паркинг и упътвания към вашата дестинация.
+                    За да може базата ни с паркинги да се разширява, то вие можете да добавяте нови локации!</div>
                     </div>
 
                     <div class="about-box">
                         <div class="about-icon">
                             <i class="fas fa-parking"></i></i>
                         </div>
-                        <div class="about-title">How does it help?</div>
+                        <div class="about-title">За кого е предназначено?</div>
                         <div class="about-desc">
-                            Hello! This is a generator for text fonts of the "cool" variety. I noticed people were
-                            trying to find a generator like fancy letters, but were ending up on actual font sites
-                            rather than generators of copy-paste text like this one. So currently this is basically a
-                            duplicate of the above, but I think I'll try to collect a few more "cool" text fonts, like
-                            the old enlgish one, and specialise this a bit. </div>
+                            Този сайт е подходящ за всички шофьори! Хубавото е, че този сайт е фунционален за паркинги 
+                        по целия свят. Дали сте в София или Ню Йорк, за ParkingPro.com няма никакво значение! </div>
                     </div>
 
                 </div>
@@ -86,10 +48,4 @@
 
     </div>
 
-
-
-</body>
-
-
-
-</html>
+    {% endblock content %}
