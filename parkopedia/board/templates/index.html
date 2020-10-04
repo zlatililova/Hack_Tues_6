@@ -12,16 +12,13 @@
     <div id="map"></div>
     <script src="static/js/customMapStyles.js">
     </script> 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCndiwpn0s7MRo2qbhPbzhSxdODyPkFDBo&callback=initMap">
-    </script>
 
   
-    <div class="pac-card" id="pac-card">
-        
-            <div id="infowindow-content">
+    <div class="pac-card" id="pac-card"> 
+        <div id="infowindow-content">
+            <img src="static/images/place-icon-temp.png" width="16" height="16" id="place-icon" />
             <span id="place-name" class="title"></span><br />
             <span id="place-address"></span>
-            </div>
+        </div>
     </div> 
 {% endblock content %}
