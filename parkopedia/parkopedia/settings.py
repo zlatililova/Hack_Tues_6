@@ -40,12 +40,9 @@ INSTALLED_APPS = [
     'board',
     'users',
     'crispy_forms',
-    "mapbox_location_field",
-    "bootstrap4",
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = "AIzaSyCndiwpn0s7MRo2qbhPbzhSxdODyPkFDBo"
-MAPBOX_KEY = "eyJ1IjoiemxhdGkiLCJhIjoiY2tmdmE3dnc3MDdtYTM1bWtnYWg3bzM3dCJ9"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
