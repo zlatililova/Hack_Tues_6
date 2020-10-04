@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% extends 'base.html' %}
+{% block content %}
 
-</html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="board/about.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-</head>
-
-<body>
-    <div class="bg-img">
-        <nav>
-            <ul>
-                <li class="logo">Parking<span style="color: #c1a163;">PRO</span>&nbsp<i class='fas fa-car'></i>
-                </li>
-                <li class="btn"><span class="fas fa-bars"></span></li>
-                <div class="items">
-                    <li><a href="base.html">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li class="active"><a href="aboutus.html">About us</a></li>
-                    <li><a href="#">Create</a></li>
-                </div>
-                <a class="asp" href="#"><button class="main-button">Log out</button></a>
-                <!--<a class="asp" href="#"><button class="main-button">Log out</button></a>-->
-
-            </ul>
-        </nav>
-
-        <script>
-            $('nav ul li.btn span').click(function () {
-                $('nav ul div.items').toggleClass("show");
-                $('nav ul li.btn span').toggleClass("show");
-            });
-        </script>
+    <div>
         <div class="about-section">
             <div class="inner-width">
                 <h1 class="section-title">About us</h1>
@@ -86,10 +52,4 @@
 
     </div>
 
-
-
-</body>
-
-
-
-</html>
+    {% endblock content %}
