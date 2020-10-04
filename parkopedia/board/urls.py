@@ -7,5 +7,5 @@ from django.conf import settings
 urlpatterns = [
     path('', views.index, name = "home" ),
     path("create/", views.create, name = "create-page"),
-
-] 
+    path("find/", views.find, name = "find-page")
+]
