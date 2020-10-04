@@ -310,29 +310,47 @@ styles: [
         infowindowContent.children["place-name"].textContent = place.name;
         infowindowContent.children["place-address"].textContent = address;
         infowindow.open(map, marker);
+
+        const currentLocation = place.geometry.location;
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `find/?lat=${currentLocation.lat()}&lng=${currentLocation.lng()}`);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const { found, name, lat, lng} = JSON.parse(xhr.responseText);
+
+                if (!found) {
+                    alert('Parking not found!');
+                    return;
+                }
+
+                const parkingLatLng = { lat, lng };
+                const parker = new google.maps.Marker({
+                    position: parkingLatLng,
+                    map
+                });
         
-        const parkingLatLng = {lat:42.7142588, lng:23.2690619};
-        const parker = new google.maps.Marker({
-            position: parkingLatLng,
-            map
-        });
-
-        const directionsService = new google.maps.DirectionsService();
-        const directionsDisplay = new google.maps.DirectionsRenderer();
-        directionsDisplay.setMap(map);
-
-        let request = {
-            origin: place.geometry.location,
-            destination: parkingLatLng,
-            travelMode: google.maps.TravelMode.DRIVING
-        };
-
-        directionsService.route(request, function(response, status){
-            if(status = 'OK'){
-                directionsDisplay.setDirections(response);
+                const directionsService = new google.maps.DirectionsService();
+                const directionsDisplay = new google.maps.DirectionsRenderer();
+                directionsDisplay.setMap(map);
+        
+                let request = {
+                    origin: place.geometry.location,
+                    destination: parkingLatLng,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+        
+                directionsService.route(request, function(response, status){
+                    if(status = 'OK'){
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+        
+            } else {
+                alert('Request failed.  Returned status of ' + xhr.status);
             }
-        });
-
+        };
+        xhr.send();
     });
 /*
     var request = {
