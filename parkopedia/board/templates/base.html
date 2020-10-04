@@ -32,7 +32,13 @@
             <div class="items">
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'create-page' %}">Create</a></li>
+            {% else %}
+            <li><a href="">Create</a></li>
+            {% endif %}
+                
+                
                 <li><a href="{% url 'profile' %}">Profile</button></a>
             </div>
             {% if user.is_authenticated %}
