@@ -231,3 +231,11 @@ nav ul li.btn:hover span:before{
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
 }
+
+.content-section {
+  background: #BAB2B5;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin: 60px;
+}
