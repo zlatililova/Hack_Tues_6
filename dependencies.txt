@@ -1,0 +1,9 @@
+Dependencies:
+
+python
+django
+django-mapbox-location-field
+django-crispy-forms
+django-bootstrap4
+PIL (Pillow)
+googlemaps (python)
