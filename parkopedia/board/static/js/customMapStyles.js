@@ -254,7 +254,6 @@ styles: [
 
     const card = document.getElementById("pac-card");
     const input = document.getElementById("pac-input");
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(card);
     const autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo("bounds", map);
     autocomplete.setFields(["address_components", "geometry", "icon", "name"]);
@@ -308,6 +307,30 @@ styles: [
     infowindowContent.children["place-address"].textContent = address;
     infowindow.open(map, marker);
     });
-    
+
+    var request = {
+        location: place.geometry.location,
+        radius: 300,
+        types: ['parking']
+    };
+
+    var places_service = new google.maps.places.PlacesService(map);
+
+    places_service.nearbySearch(request, callback);
 }
 
+function callback(results, status) {
+    if(status == google.maps.places.PlacesService.OK){
+        for (var i = 0; i < results.length; i++){
+            createMarker(results[i]);
+        }
+    }
+}
+
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+}
