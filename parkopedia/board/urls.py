@@ -6,6 +6,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.index, name = "home" ),
-    #path("create/", create, name = "create-page"),
+    path("create/", views.create, name = "create-page"),
 
 ] 
