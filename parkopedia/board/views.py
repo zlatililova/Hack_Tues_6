@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.generic import CreateView
+from .models import Location
 from .parking_search import nearest
 
 # Create your views here.
@@ -23,5 +24,9 @@ def find(request):
     data['lng'] = lng
     return JsonResponse(data)
 
-def create(request):
-    return render(request, 'create.html')
+
+class AddPlaceView(CreateView):
+        model = Location
+        template_name = "create.html"
+        success_url = "/index/"
+        fields = ("location",)
