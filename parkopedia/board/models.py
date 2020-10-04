@@ -7,10 +7,6 @@ class Post(models.Model):
     rating = models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
 
-class MyPos(models.Model):
-    lat = models.FloatField(default=42.697450)
-    lon = models.FloatField(default=23.324280)
-
 class Location(models.Model):
     location = LocationField(
         map_attrs={"style": "mapbox://styles/mapbox/outdoors-v11", "marker_color": "blue", "center": (17.031645, 51.106715)})
