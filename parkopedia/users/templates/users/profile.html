@@ -5,9 +5,9 @@
       <div class="media">
         <div class="media-body">
           <h2 class="account-heading">{{user.username}}</h2>
-          <h3 class="account-heading">{{user.nickname}}</h3>
-          <p class="text-secondary">{{user.email}}</p>
-          <p class="text-secondary">{{user.bio}}</p>
+          <h5 class="text-secondary">Name: {{user.first_name}} {{user.last_name}} </h5>
+          <h5 class="text-secondary">E-mail: {{user.email}}</h5>
+
         </div>
       </div>
       <form method="POST"  enctype="multipart/form-data">
@@ -15,7 +15,6 @@
           <fieldset class="form-group">
             <legend class="border-bottom md-4"> Update Profile Info</legend>
             {{ u_form|crispy }}
-            {{ p_form|crispy }}
           </fieldset>
           <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Update</button>
