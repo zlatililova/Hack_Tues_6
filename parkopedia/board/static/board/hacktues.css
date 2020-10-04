@@ -6,7 +6,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    color: #fefefe;
 }
 
 nav{
@@ -150,8 +149,14 @@ button:hover {
   margin-top: 10px;
 }
 
-#pac-input {
+
+#infowindow-content span {
   color: #000;
+}
+
+
+#infowindow-content .title {
+  font-weight: bold;
 }
 
   nav ul li.btn span.show:before{
@@ -249,12 +254,3 @@ nav ul li.btn:hover span:before{
   .account-heading {
     font-size: 2.5rem;
   }
-
-  
-#pac-input {
-  
-}
-
-#pac-input:focus {
-  border-color: #4d90fe;
-}
