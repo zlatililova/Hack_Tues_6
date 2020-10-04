@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .views import AddPlaceView
 from django.conf.urls.static import static
 from .views import AddPlaceView
 from django.conf import settings
