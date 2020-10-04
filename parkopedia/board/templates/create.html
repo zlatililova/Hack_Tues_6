@@ -1,28 +1,15 @@
 {% extends 'base.html' %}
-
+{% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% load mapbox_location_field_tags %}
+    {% location_field_includes %}
+    {% include_jquery %}
 {% block content %}
-<div class="container content-section">
-    <form method="post">
-        {%csrf_token%}
-        <h2>Create a new parking address</h2>
-        <label>Name of parking</label>
-        <input id="title" name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-        <label>Rate the area</label>
-        <div class="rate">
-            <input type="radio" id="star5" name="rate" value="5" />
-            <label for="star5" title="text">5 stars</label>
-            <input type="radio" id="star4" name="rate" value="4" />
-            <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label for="star1" title="text">1 star</label>
-          </div>
-        
-        <button class="btn btn-primary" type="submit">Create post</button>
-    </form>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input class="btn btn-primary text-light btn-lg" type="submit" value="submit">
+</form>
+{{ form.media }}
 </div>
 {% endblock %}
