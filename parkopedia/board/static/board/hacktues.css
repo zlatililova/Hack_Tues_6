@@ -249,11 +249,6 @@ nav ul li.btn:hover span:before{
     font-size: 2.5rem;
   }
 
-  
-#pac-input {
-  
-}
-
 #pac-input:focus {
   border-color: #4d90fe;
 }
