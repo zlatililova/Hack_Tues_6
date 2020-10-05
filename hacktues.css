@@ -1,0 +1,42 @@
+.topnav {
+    background-color: #59ba4e;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav a.hover {
+    background-color: black;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: black;
+    color: white;
+}
+
+.square {
+    position: absolute;
+    top: 97px;
+    right: 30px;
+    height: 447px;
+    width: 225px;
+    background-color: #828577;
+}
+
+.square-text {
+    position: absolute;
+    text-align: center;
+    top: 7%;
+    left: 1%;
+    color: white;
+    padding-left: 0.1%;
+    padding-right: 1%;
+}
